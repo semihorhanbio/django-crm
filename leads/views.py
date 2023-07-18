@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from .models import Lead
 from .forms import LeadModelForm
 
+def landing_page(request):
+    return render(request, 'landing.html')
+
 def lead_list(request):
     context = {'leads': Lead.objects.all()}
     return render(request, 'lead_list.html', context)
